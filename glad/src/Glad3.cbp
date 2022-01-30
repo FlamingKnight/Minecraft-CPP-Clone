@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Glad3"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="msvc8"/>
+		<Option virtualFolders="CMake Files\;CMake Files\GLFW\;CMake Files\GLFW\src\;CMake Files\glad\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/Users/asher/CLionProjects/Open_Dungeoun/glad/src"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f C:\Users\asher\CLionProjects\Open_Dungeoun\glad\src\Makefile VERBOSE=1 all"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Users\asher\CLionProjects\Open_Dungeoun\glad\src\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Users\asher\CLionProjects\Open_Dungeoun\glad\src\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Users\asher\CLionProjects\Open_Dungeoun\glad\src\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Glad3">
+				<Option output="C:/Users/asher/CLionProjects/Open_Dungeoun/glad/src/Glad3.lib" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/asher/CLionProjects/Open_Dungeoun/glad/src"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="msvc8"/>
+				<Compiler>
+					<Add directory="C:/Users/asher/CLionProjects/Open_Dungeoun/GLFW/include"/>
+					<Add directory="C:/Users/asher/CLionProjects/Open_Dungeoun/glad/include"/>
+					<Add directory="C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\ATLMFC\include"/>
+					<Add directory="C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f C:\Users\asher\CLionProjects\Open_Dungeoun\glad\src\Makefile VERBOSE=1 Glad3"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Users\asher\CLionProjects\Open_Dungeoun\glad\src\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Users\asher\CLionProjects\Open_Dungeoun\glad\src\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Users\asher\CLionProjects\Open_Dungeoun\glad\src\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Glad3/fast">
+				<Option output="C:/Users/asher/CLionProjects/Open_Dungeoun/glad/src/Glad3.lib" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/asher/CLionProjects/Open_Dungeoun/glad/src"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="msvc8"/>
+				<Compiler>
+					<Add directory="C:/Users/asher/CLionProjects/Open_Dungeoun/GLFW/include"/>
+					<Add directory="C:/Users/asher/CLionProjects/Open_Dungeoun/glad/include"/>
+					<Add directory="C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\ATLMFC\include"/>
+					<Add directory="C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.30.30705\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f C:\Users\asher\CLionProjects\Open_Dungeoun\glad\src\Makefile VERBOSE=1 Glad3/fast"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Users\asher\CLionProjects\Open_Dungeoun\glad\src\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Users\asher\CLionProjects\Open_Dungeoun\glad\src\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Users\asher\CLionProjects\Open_Dungeoun\glad\src\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/Users/asher/CLionProjects/Open_Dungeoun/glad/include/glad/glad.h">
+			<Option target="Glad3"/>
+		</Unit>
+		<Unit filename="C:/Users/asher/CLionProjects/Open_Dungeoun/glad/src/glad.c">
+			<Option target="Glad3"/>
+		</Unit>
+		<Unit filename="C:/Users/asher/CLionProjects/Open_Dungeoun/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="C:/Users/asher/CLionProjects/Open_Dungeoun/GLFW/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\GLFW\"/>
+		</Unit>
+		<Unit filename="C:/Users/asher/CLionProjects/Open_Dungeoun/GLFW/cmake_uninstall.cmake.in">
+			<Option virtualFolder="CMake Files\GLFW\"/>
+		</Unit>
+		<Unit filename="C:/Users/asher/CLionProjects/Open_Dungeoun/GLFW/src/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\GLFW\src\"/>
+		</Unit>
+		<Unit filename="C:/Users/asher/CLionProjects/Open_Dungeoun/GLFW/src/glfw3.pc.in">
+			<Option virtualFolder="CMake Files\GLFW\src\"/>
+		</Unit>
+		<Unit filename="C:/Users/asher/CLionProjects/Open_Dungeoun/GLFW/src/glfw3Config.cmake.in">
+			<Option virtualFolder="CMake Files\GLFW\src\"/>
+		</Unit>
+		<Unit filename="C:/Users/asher/CLionProjects/Open_Dungeoun/GLFW/src/glfw_config.h.in">
+			<Option virtualFolder="CMake Files\GLFW\src\"/>
+		</Unit>
+		<Unit filename="C:/Users/asher/CLionProjects/Open_Dungeoun/glad/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\glad\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
