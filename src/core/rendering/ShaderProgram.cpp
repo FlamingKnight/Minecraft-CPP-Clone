@@ -1,4 +1,3 @@
-
 #include <gtc/type_ptr.hpp>
 #include "ShaderProgram.h"
 #include "Shader.h"
@@ -25,7 +24,7 @@ namespace MinecraftClone {
     };
 
     // Internal Variables
-    static auto allShaderVaraibleLocations = robin_hood::unordered_set<ShaderVariable, hashShaderVar>();
+    static auto allShaderVariableLocations = robin_hood::unordered_set<ShaderVariable, hashShaderVar>();
 
     // Forward Declarations
     static GLint getVariableLocation(const ShaderProgram& shader, const char* varName);
@@ -34,21 +33,21 @@ namespace MinecraftClone {
         // Create the shader program
         GLuint program = glCreateProgram();
 
-        Shader vertexShader{};
+        Shader vertexShader;
         if(!vertexShader.compile(ShaderType::Vertex, vertexShaderFile)) {
             vertexShader.destroy();
             g_logger_error("Failed to compile a vertex shader");
             return false;
         }
 
-        Shader fragmentShader{};
+        Shader fragmentShader;
         if(!fragmentShader.compile(ShaderType::Fragment, fragmentShaderFile)) {
             fragmentShader.destroy();
             g_logger_error("Failed to compile a fragment shader");
             return false;
         }
 
-        // Attatch the vertex and fragment shaders, try to link them with one another
+        // Attach the vertex and fragment shaders, try to link them with one another
         glAttachShader(program, vertexShader.shaderId);
         glAttachShader(program, fragmentShader.shaderId);
 
@@ -58,7 +57,7 @@ namespace MinecraftClone {
         // Log errors if we couldn't link
         GLint isLinked = GL_FALSE;
         glGetProgramiv(program, GL_LINK_STATUS, &isLinked);
-        if(isLinked == 0) {
+        if(isLinked == GL_FALSE) {
             GLint maxLength = 0;
             glGetProgramiv(program, GL_INFO_LOG_LENGTH, &maxLength);
 
@@ -87,7 +86,7 @@ namespace MinecraftClone {
         glGetProgramiv(program, GL_ACTIVE_UNIFORMS, &numUniforms);
 
         int maxCharLength;
-        glGetProgramiv(program, GL_ACTIVE_UNIFORMS, &maxCharLength);
+        glGetProgramiv(program, GL_ACTIVE_UNIFORM_MAX_LENGTH, &maxCharLength);
         if(numUniforms > 0 && maxCharLength > 0) {
             char* charBuffer = (char*) g_memory_allocate(sizeof(char) * maxCharLength);
 
@@ -100,7 +99,7 @@ namespace MinecraftClone {
                 shaderVar.name = std::string(charBuffer, length);
                 shaderVar.varLocation = varLocation;
                 shaderVar.shaderProgramId = program;
-                allShaderVaraibleLocations.emplace(shaderVar);
+                allShaderVariableLocations.emplace(shaderVar);
             }
 
             g_memory_free(charBuffer);
@@ -192,7 +191,7 @@ namespace MinecraftClone {
     }
 
     void ShaderProgram::clearAllShaderVariables() {
-        allShaderVaraibleLocations.clear();
+        allShaderVariableLocations.clear();
     }
 
     // Private Functions
@@ -202,9 +201,11 @@ namespace MinecraftClone {
                 0,
                 shader.programId
         };
-        auto iterator = allShaderVaraibleLocations.find(match);
-        if(iterator != allShaderVaraibleLocations.end())
-            return iterator->varLocation;
+        auto iter = allShaderVariableLocations.find(match);
+        if (iter != allShaderVariableLocations.end()) {
+            return iter->varLocation;
+        }
+
         return -1;
     }
 
